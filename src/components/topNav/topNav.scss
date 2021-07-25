@@ -1,0 +1,29 @@
+@import "../../index";
+
+.topNav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid #e7e7e7;
+	padding: 10px 20px;
+	box-shadow: 1px 3px 6px 0 rgba(0,0,0,0.5);
+	-webkit-box-shadow: 1px 3px 6px 0 rgba(0,0,0,0.5);
+	-moz-box-shadow: 1px 3px 6px 0 rgba(0,0,0,0.5);
+}
+
+.icon {
+	border: 1px solid #cccccc;
+	height: 30px;
+	background-color: white;
+	border-radius: 4px;
+}
+
+.active {
+	background-color: #cccccc;
+	border: 1px solid #cccccc;
+	border-radius: 4px;
+}
+
+.faIcon {
+	transition: opacity .3s, transform .3s;
+}
