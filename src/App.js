@@ -1,26 +1,25 @@
-import React from 'react'
-import classes from './app.scss';
-import logo from './logo.svg';
+import React from 'react';
+import {Provider} from 'react-redux';
+import {ConnectedRouter} from 'connected-react-router';
+import configureStore, {history} from './store/configureStore.dev';
+import {Route, Switch} from 'react-router-dom';
+import Login from './components/login/Login';
+import {RequireAuth} from './components/RequireAuth';
 
-function App() {
+const store = configureStore();
+
+const App = () => {
     return (
-        <div className={classes.app}>
-            <header className={classes.appHeader}>
-                <img src={logo} className={classes.appLogo} alt="logo" />
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a
-                    className={classes.appLink}
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
-    );
-}
+        <Provider store={store}>
+            <ConnectedRouter history={history}>
+                <Switch>
+                    <Route exact path="/login" component={Login} />
+                    <Route component={RequireAuth} />
+                </Switch>
+            </ConnectedRouter>
+        </Provider>
+    )
+};
 
+export {App};
 export default App;
