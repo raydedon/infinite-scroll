@@ -21,7 +21,7 @@ export const loginUser = (cred) => {
     return (dispatch) => {
         dispatch(loginUserRequest());
         const promise = new Promise((resolve) => {
-            setTimeout(() => resolve(), 2000);
+            setTimeout(() => resolve(), 3000);
         });
         promise.then(() => {
             if (cred.userName === 'a@a.com' && cred.password === 'password') {

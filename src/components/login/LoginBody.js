@@ -1,10 +1,11 @@
 import React, {useCallback, useEffect, useState, useRef} from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {loginUser} from '../../actions/commonAction';
 import classes from './login.scss';
 
 const LoginBody = () => {
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.userDetails.loading);
   
   const inputRef = useRef(null);
   const [cred, setCred] = useState({userName: '', password: ''});
@@ -40,6 +41,7 @@ const LoginBody = () => {
                 ref={inputRef}
                 onChange={inputChange}
                 placeholder="Email"
+                disabled={loading}
             />
             <input
                 type="password"
@@ -47,8 +49,9 @@ const LoginBody = () => {
                 value={password}
                 onChange={inputChange}
                 placeholder="Password"
+                disabled={loading}
             />
-            <button type="submit">SIGN IN</button>
+            <button type="submit" disabled={loading}>{loading && <span className='spinner-border spinner-border-sm'/>}SIGN IN</button>
           </form>
         </div>
       </div>
