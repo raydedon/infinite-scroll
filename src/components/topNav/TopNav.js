@@ -13,7 +13,7 @@ const TopNav = () => {
     
     return (
         <div className={classes.topNav}>
-            <h1>Infinite Scroll...</h1>
+            <h3>Infinite Scroll...</h3>
             <button className={classes.icon} onClick={onClickHandler}>
                 <FontAwesomeIcon icon={faSignOutAlt} className={classes.faIcon}/>&nbsp;Logout
             </button>
