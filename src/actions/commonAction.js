@@ -31,7 +31,7 @@ export const loginUser = (cred) => {
             setTimeout(() => resolve(), 3000);
         });
         promise.then(() => {
-            if (cred.userName === 'a@a.com' && cred.password === 'password') {
+            if (cred.userName === 'a@a.com' && cred.password === 'a') {
                 dispatch(loginUserSuccess());
                 dispatch(push('/home'));
                 localStorage.setItem('authenticated', 'true');
