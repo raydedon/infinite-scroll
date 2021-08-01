@@ -6,11 +6,9 @@ const InfiniteScroll = (props) => {
     const {loadContent, children, loading} = props;
     const scrollableTargetOuter = React.useRef();
     const scrollableTargetInner = React.useRef();
-    const loadingTarget = React.useRef();
     
     const onScrollHandler = React.useCallback(() => {
         const boundClientRect = scrollableTargetInner.current.getBoundingClientRect();
-        const boundClientRectLoading = loadingTarget.current.getBoundingClientRect();
         // const scrollTop = scrollableTargetInner.current.scrollTop;
         const scrollHeight = scrollableTargetInner.current.scrollHeight;
         const clientHeight = scrollableTargetInner.current.clientHeight;
@@ -19,7 +17,7 @@ const InfiniteScroll = (props) => {
         const val = scrollHeight + boundClientRect.y - clientHeightOut;
         if (loading) return;
         if (val < 200) {
-            console.info({clientHeight, scrollTopOut, boundClientRect: boundClientRect, val, clientHeightOut, boundClientRectLoading});
+            console.info({clientHeight, scrollTopOut, boundClientRect: boundClientRect, val, clientHeightOut});
             loadContent();
         }
     }, [loadContent, loading]);
@@ -38,7 +36,6 @@ const InfiniteScroll = (props) => {
             <div className={props.className} style={{width: '100%'}} ref={scrollableTargetInner}>
                 {children}
             </div>
-            <div style={{height: '200px', width: '100%'}} ref={loadingTarget}>Loading...</div>
         </div>
     );
 };
