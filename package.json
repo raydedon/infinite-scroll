@@ -29,7 +29,8 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.6",
     "enzyme-to-json": "^3.6.2",
-    "eslint": "^7.27.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-webpack-plugin": "^2.5.4",
@@ -83,9 +84,16 @@
     "moduleNameMapper": {
       "\\.(css|less|scss|sss|styl)$": "<rootDir>/node_modules/jest-css-modules"
     },
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "collectCoverageFrom": ["src/**/*.js", "!src/index.js"],
-    "coverageReporters": ["text"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!src/index.js"
+    ],
+    "coverageReporters": [
+      "text"
+    ]
   },
   "standard": {
     "globals": [
