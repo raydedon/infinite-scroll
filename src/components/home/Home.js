@@ -8,13 +8,11 @@ const Home = () => {
     return (
         <div className={clsx(classes.wrapper)}>
             <TopNav/>
-            <div className={classes.container}>
-                <HomeBody/>
-            </div>
+            <HomeBody/>
         </div>
-        );
+    );
     
-    };
+};
 
 export {Home};
 export default Home;

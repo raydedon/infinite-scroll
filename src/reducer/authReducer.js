@@ -5,7 +5,7 @@ import {
   LOGOUT_USER,
 } from '../actions/commonAction';
 
-const initialState = { authenticated: false, loading: false };
+const initialState = { authenticated: true, loading: false };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
