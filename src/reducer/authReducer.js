@@ -4,8 +4,9 @@ import {
   LOGIN_USER_SUCCESS,
   LOGOUT_USER, RESET_REDUX_STORE,
 } from '../actions/commonAction';
+import {isUserLoggedIn} from '../utility';
 
-const initialState = { authenticated: false, loading: false };
+const initialState = { authenticated: isUserLoggedIn(), loading: false };
 
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -21,7 +22,7 @@ const authReducer = (state = initialState, action) => {
     case LOGOUT_USER:
       return { authenticated: false };
     case RESET_REDUX_STORE:
-      return initialState;
+      return { authenticated: isUserLoggedIn(), loading: false };
     default:
       return state;
   }

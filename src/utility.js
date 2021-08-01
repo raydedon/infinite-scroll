@@ -31,3 +31,5 @@ export function throttle(func, ms) {
     
     return wrapper;
 }
+
+export const isUserLoggedIn = () => Boolean(localStorage.getItem('authenticated'));

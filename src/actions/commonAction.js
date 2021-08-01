@@ -34,6 +34,7 @@ export const loginUser = (cred) => {
             if (cred.userName === 'a@a.com' && cred.password === 'password') {
                 dispatch(loginUserSuccess());
                 dispatch(push('/home'));
+                localStorage.setItem('authenticated', 'true');
             } else {
                 dispatch(loginUserFailure(new Error('Wrong credentials!!')));
             }

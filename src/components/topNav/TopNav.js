@@ -2,13 +2,13 @@ import React, {useCallback} from 'react';
 import classes from './topNav.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
-import {logoutUser, resetReduxStore} from '../../actions/commonAction';
+import {resetReduxStore} from '../../actions/commonAction';
 import {useDispatch} from 'react-redux';
 
 const TopNav = () => {
     const dispatch = useDispatch();
     const onClickHandler = useCallback(() => {
-        dispatch(logoutUser());
+        localStorage.clear();
         dispatch(resetReduxStore());
     }, [dispatch]);
     
