@@ -9,6 +9,7 @@ export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE';
 export const LOAD_IMAGES_REQUEST = 'LOAD_IMAGES_REQUEST';
 export const LOAD_IMAGES_SUCCESS = 'LOAD_IMAGES_SUCCESS';
 export const LOAD_IMAGES_FAILURE = 'LOAD_IMAGES_FAILURE';
+export const RESET_REDUX_STORE = 'RESET_REDUX_STORE';
 export const LOGOUT_USER = 'LOGOUT_USER';
 import { push } from 'connected-react-router';
 import {PEXEL_API_KEY} from '../utility';
@@ -69,6 +70,10 @@ export const loadImages = () => {
             });
     };
 };
+
+export const resetReduxStore = () => ({
+    type: RESET_REDUX_STORE
+});
 
 export const logoutUser = () => ({
     type: LOGOUT_USER,

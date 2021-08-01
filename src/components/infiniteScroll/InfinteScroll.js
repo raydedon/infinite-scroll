@@ -11,13 +11,13 @@ const InfiniteScroll = (props) => {
         const boundClientRect = scrollableTargetInner.current.getBoundingClientRect();
         // const scrollTop = scrollableTargetInner.current.scrollTop;
         const scrollHeight = scrollableTargetInner.current.scrollHeight;
-        const clientHeight = scrollableTargetInner.current.clientHeight;
+        // const clientHeight = scrollableTargetInner.current.clientHeight;
         const clientHeightOut = scrollableTargetOuter.current.clientHeight;
-        const scrollTopOut = scrollableTargetOuter.current.scrollTop;
+        // const scrollTopOut = scrollableTargetOuter.current.scrollTop;
         const val = scrollHeight + boundClientRect.y - clientHeightOut;
         if (loading) return;
         if (val < 200) {
-            console.info({clientHeight, scrollTopOut, boundClientRect: boundClientRect, val, clientHeightOut});
+            // console.info({clientHeight, scrollTopOut, boundClientRect: boundClientRect, val, clientHeightOut});
             loadContent();
         }
     }, [loadContent, loading]);

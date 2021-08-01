@@ -1,4 +1,9 @@
-import {LOAD_IMAGES_FAILURE, LOAD_IMAGES_REQUEST, LOAD_IMAGES_SUCCESS} from '../../actions/commonAction';
+import {
+    LOAD_IMAGES_FAILURE,
+    LOAD_IMAGES_REQUEST,
+    LOAD_IMAGES_SUCCESS,
+    RESET_REDUX_STORE
+} from '../../actions/commonAction';
 
 const initialState = { photos: [], loading: false, nextUrl: '', prevUrl: '' };
 
@@ -13,6 +18,8 @@ const imagesReducer = (state = initialState, action) => {
         case LOAD_IMAGES_FAILURE: {
             return {...state, loading: false};
         }
+        case RESET_REDUX_STORE:
+            return initialState;
         default:
             return state;
     }
