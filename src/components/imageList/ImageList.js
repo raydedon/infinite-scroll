@@ -12,16 +12,16 @@ const ImageList = () => {
         <div className={clsx(classes.wrapper, classes.container)}>
             {photos.length > 0 && <div className={classes.row}>
                 <div className={classes.column}>
-                    {photos.length > 0 && photos.map((img, index) => index%4 === 0 && <UnsplashImage key={img.id} url={img.src.medium}/>)}
+                    {photos.length > 0 && photos.filter((img, index) => index%4 === 0).map((img) => <UnsplashImage key={img.id} url={img.src.medium}/>)}
                 </div>
                 <div className={classes.column}>
-                    {photos.length > 0 && photos.map((img, index) => index%4 === 1 && <UnsplashImage key={img.id} url={img.src.medium}/>)}
+                    {photos.length > 0 && photos.filter((img, index) => index%4 === 1).map((img) => <UnsplashImage key={img.id} url={img.src.medium}/>)}
                 </div>
                 <div className={classes.column}>
-                    {photos.length > 0 && photos.map((img, index) => index%4 === 2 && <UnsplashImage key={img.id} url={img.src.medium}/>)}
+                    {photos.length > 0 && photos.filter((img, index) => index%4 === 2).map((img) => <UnsplashImage key={img.id} url={img.src.medium}/>)}
                 </div>
                 <div className={classes.column}>
-                    {photos.length > 0 && photos.map((img, index) => index%4 === 3 && <UnsplashImage key={img.id} url={img.src.medium}/>)}
+                    {photos.length > 0 && photos.filter((img, index) => index%4 === 3).map((img) => <UnsplashImage key={img.id} url={img.src.medium}/>)}
                 </div>
             </div>}
             <div className={classes.loading}><img src={spinner}/></div>

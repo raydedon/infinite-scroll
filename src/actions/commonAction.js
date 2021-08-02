@@ -57,7 +57,7 @@ export const loadImages = () => {
     return (dispatch, getState) => {
         dispatch(loadImagesRequest());
         const images = getState().images;
-        const url = images.nextUrl.length ? images.nextUrl : 'https://api.pexels.com/v1/curated';
+        const url = images.nextUrl.length ? images.nextUrl : 'https://api.pexels.com/v1/curated?per_page=20';
         axios.get(url, {
                 headers: {
                     'Authorization': `${PEXEL_API_KEY}`
